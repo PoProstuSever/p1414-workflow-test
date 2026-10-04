@@ -1,0 +1,20 @@
+# Wyłącznie kontrolowane repo testowe. Wymagany jest tylko required-check.
+name: Workflow acceptance fixture
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions: {}
+jobs:
+  required-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kontrolowany wymagany wynik
+        env:
+          FIXTURE_RESULT: pass
+        run: test "$FIXTURE_RESULT" = pass
+  optional-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Kontrolowana awaria opcjonalnej integracji
+        run: exit 1
