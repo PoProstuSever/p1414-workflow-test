@@ -12,7 +12,9 @@ jobs:
       - name: Kontrolowany wymagany wynik
         env:
           FIXTURE_RESULT: pass
-        run: test "$FIXTURE_RESULT" = pass
+        run: |
+          sleep 45
+          test "$FIXTURE_RESULT" = pass
   optional-check:
     runs-on: ubuntu-latest
     steps:
