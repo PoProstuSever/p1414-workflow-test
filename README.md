@@ -12,3 +12,10 @@ sekretów ani danych środowiska produkcyjnego.
 
 Scenariusze i wyniki odbioru są przechowywane w projekcie p1414 `tests`.
 Proces pracy pochodzi z bieżących reguł p1414.
+
+## Kontrolowany przebieg PR
+
+Pierwsza wersja PR-a utrzymuje wymagany check w stanie oczekiwania przez 45 sekund,
+a następnie kończy go błędem. Ta wersja nie nadaje się do merge.
+Po niezależnym review autor przywróci wynik `pass` w tym samym PR-ze.
+Odbiór ma potwierdzić aktualny SHA, zmianę stanu checków i brak duplikatów.
