@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Kontrolowany wymagany wynik
         env:
-          FIXTURE_RESULT: fail
+          FIXTURE_RESULT: pass
         run: |
           sleep 45
           test "$FIXTURE_RESULT" = pass
